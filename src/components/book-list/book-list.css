@@ -1,0 +1,32 @@
+.book-list {
+  padding: 25px;
+  min-width: 75%;
+  max-width: 85%;
+}
+
+.book-list ul {
+  width: 100%;
+}
+
+.get-started {
+  margin-top: 50px;
+  width: 250px;
+  text-align: center;
+  align-self: center;
+  z-index: -1;
+}
+
+.get-started-text {
+  font-family: 'Handlee', cursive;
+  font-size: 40px;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  color: rgb(62, 62, 62);
+}
+
+.get-started-icon {
+  width: 50%;
+  filter: invert(97%) sepia(54%) saturate(1456%) hue-rotate(66deg) brightness(87%) contrast(84%);
+  -webkit-filter: invert(97%) sepia(54%) saturate(1456%) hue-rotate(66deg) brightness(87%)
+    contrast(84%);
+}

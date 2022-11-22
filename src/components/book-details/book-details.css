@@ -1,0 +1,51 @@
+.book-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  padding: 20px 25px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.book-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.author {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.pages {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .book-row {
+    justify-content: space-between;
+  }
+
+  .button-group {
+    margin-left: auto;
+  }
+}
