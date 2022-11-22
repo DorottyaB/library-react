@@ -105,6 +105,10 @@ input.submit-btn {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
+input.submit-btn:focus-visible {
+  outline: 1px solid #196037;
+}
+
 .submit-btn:hover {
   filter: brightness(110%);
 }
