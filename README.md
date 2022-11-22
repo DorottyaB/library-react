@@ -13,4 +13,4 @@ A book collection manager where you can add and remove books, and mark them as r
 
 ### Link
 
-Live site URL: [https://dorottyab.github.io/library-react/](https://dorottyab.github.io/library-react/)
+Live site URL: [on Vercel](https://library-react-beige.vercel.app/)
