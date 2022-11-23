@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { BookContext } from '../../context/bookContext';
+import { BookContext } from '../../context/BookContext';
 import Button from '../button/Button';
 import './book-details.css';
 
