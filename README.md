@@ -13,4 +13,4 @@ A book collection manager where you can add and remove books, and mark them as r
 
 ### Link
 
-Live site URL: [on Vercel](https://library-react-beige.vercel.app/)
+Live site URL: [on Vercel](https://library-react-wheat.vercel.app/)
