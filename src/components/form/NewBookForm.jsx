@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { useContext, useState } from 'react';
-import { BookContext } from '../../context/BookContext';
-import { FormContext } from '../../context/FormContext';
+import { BookContext } from '../../context/bookContext';
+import { FormContext } from '../../context/formContext';
 import './new-book-form.css';
 
 const NewBookForm = () => {

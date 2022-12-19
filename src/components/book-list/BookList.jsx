@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { BookContext } from '../../context/BookContext';
+import { BookContext } from '../../context/bookContext';
 import BookDetails from '../book-details/BookDetails';
 import './book-list.css';
 import image from '../../assets/books.png';

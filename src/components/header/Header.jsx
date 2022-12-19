@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import logo from '../../assets/books-light.svg';
-import { FormContext } from '../../context/FormContext';
+import { FormContext } from '../../context/formContext';
 import Button from '../button/Button';
 import './header.css';
 

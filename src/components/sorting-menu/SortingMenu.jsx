@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { BookContext } from '../../context/BookContext';
+import { BookContext } from '../../context/bookContext';
 import './sorting-menu.css';
 
 const SortingMenu = () => {
