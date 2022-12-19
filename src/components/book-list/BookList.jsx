@@ -3,12 +3,14 @@ import { BookContext } from '../../context/BookContext';
 import BookDetails from '../book-details/BookDetails';
 import './book-list.css';
 import image from '../../assets/books.png';
+import SortingMenu from '../sorting-menu/SortingMenu';
 
 const BookList = () => {
   const { books } = useContext(BookContext);
 
   return books.length ? (
     <div className='book-list'>
+      <SortingMenu />
       <ul>
         {books.map(book => {
           return <BookDetails book={book} key={book.id} />;

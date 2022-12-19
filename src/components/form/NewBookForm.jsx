@@ -12,6 +12,7 @@ const NewBookForm = () => {
     pages: '',
     isRead: false,
     id: null,
+    date: null,
   });
 
   const handleChange = e => {
@@ -23,6 +24,7 @@ const NewBookForm = () => {
         ...prevFormData,
         [name]: value,
         id: uuidv4(),
+        date: new Date().getTime(),
       };
     });
   };

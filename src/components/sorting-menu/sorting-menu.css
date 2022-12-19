@@ -1,0 +1,57 @@
+.sorting-menu-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sorting-icon-container {
+  width: 24px;
+  height: auto;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.sorting-icon-container:hover svg,
+.sorting-icon-container:active svg {
+  stroke: #444444;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.sorting-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 5px;
+}
+
+.sorting-menu p {
+  color: #555555;
+  font-size: 12px;
+}
+
+.sorting-menu label {
+  padding: 7px 10px;
+  margin-right: 0;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sorting-menu label:hover,
+.sorting-menu label:active {
+  background-color: #e6e6e6;
+}
+
+input[type='radio'][name='sort']:checked + .sorting-menu label {
+  background-color: #e6e6e6;
+}
