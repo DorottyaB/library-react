@@ -41,7 +41,7 @@ button:focus-visible {
 
 @media screen and (min-width: 1024px) {
   button:hover {
-    filter: brightness(110%);
+    filter: brightness(105%);
   }
 
   .btn-secondary:hover {

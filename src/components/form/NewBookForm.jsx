@@ -46,11 +46,11 @@ const NewBookForm = () => {
         <form onSubmit={handleAddBook} className='add-book-form'>
           <div className='form-group'>
             <label htmlFor='author'>Author:</label>
-            <input type='text' value={book.author} onChange={handleChange} name='author' />
+            <input type='text' value={book.author} onChange={handleChange} name='author' required />
           </div>
           <div className='form-group'>
             <label htmlFor='title'>Title:</label>
-            <input type='text' name='title' value={book.title} onChange={handleChange} />
+            <input type='text' name='title' value={book.title} onChange={handleChange} required />
           </div>
           <div className='form-group'>
             <label htmlFor='pages'>Number of pages:</label>
@@ -59,6 +59,7 @@ const NewBookForm = () => {
           <div className='form-group is-read'>
             <label>Have you read it?</label>
             <input
+              className='is-read-checkbox'
               name='isRead'
               type='checkbox'
               checked={book.isRead}

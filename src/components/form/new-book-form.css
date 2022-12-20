@@ -7,12 +7,13 @@
   left: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
 }
 
 .form-container {
   box-sizing: border-box;
+  margin-top: 100px;
   min-width: 340px;
   max-width: 366px;
   padding: 30px;
@@ -23,6 +24,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .add-book-form {
@@ -43,6 +45,7 @@ label {
   margin-right: 8px;
   font-weight: 500;
   font-size: 15px;
+  white-space: nowrap;
 }
 
 input:not([type='checkbox']) {
@@ -59,8 +62,7 @@ input:focus {
 }
 
 input[type='number'] {
-  width: 55px;
-  text-align: right;
+  width: 100%;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -77,17 +79,58 @@ input[type='number'] {
 
 .is-read {
   display: flex;
+  gap: 5px;
 }
 
-.checkbox {
-  width: 20px;
+input[type='checkbox'].is-read-checkbox {
+  appearance: none;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.4);
   height: 20px;
-  margin-top: 4px;
-  accent-color: #fff;
+  width: 20px;
+  display: inline-block;
+  border-radius: 3px;
+  vertical-align: text-bottom;
+  position: relative;
+  cursor: pointer;
 }
 
-.checkbox:focus {
+input[type='checkbox'].is-read-checkbox::before {
+  content: '';
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  top: 0;
+}
+
+input[type='checkbox'].is-read-checkbox:focus {
   outline: 1px solid #4acf81;
+}
+
+/* for mixed state */
+input[type='checkbox'].is-read-checkbox:indeterminate::before,
+input[type='checkbox'][aria-checked='mixed'].is-read-checkbox::before {
+  border: 2px solid #222;
+  height: 0;
+  width: 40%;
+}
+
+input[type='checkbox'].is-read-checkbox:checked {
+  background-color: #4acf81;
+  outline: none;
+  border: 2px solid #4acf81;
+}
+
+/* check mark */
+input[type='checkbox'].is-read-checkbox:checked::before {
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  height: 56%;
+  width: 21%;
+  transform: rotate(45deg) translateY(-10%) translateX(-25%);
 }
 
 input.submit-btn {
