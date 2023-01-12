@@ -13,3 +13,8 @@ main {
   align-items: center;
   justify-content: flex-start;
 }
+
+.App:has(.overlay) {
+  overflow-y: hidden;
+  height: 100vh;
+}
