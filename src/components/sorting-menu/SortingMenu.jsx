@@ -1,8 +1,10 @@
 import { useContext, useState } from 'react';
 import { BookContext } from '../../context/bookContext';
+import { ThemeContext } from '../../context/themeContext';
 import './sorting-menu.css';
 
 const SortingMenu = () => {
+  const { getTheme } = useContext(ThemeContext);
   const [sortBy, setSortBy] = useState('');
   const { dispatch } = useContext(BookContext);
   const [isOpen, setIsOpen] = useState(false);
@@ -18,13 +20,18 @@ const SortingMenu = () => {
   return (
     <div className='sorting-menu-container'>
       {!isOpen ? (
-        <div className='sorting-icon-container' title='Sort by' onClick={() => setIsOpen(true)}>
+        <div
+          className='sorting-icon-container'
+          style={{ backgroundColor: getTheme.cardBg }}
+          title='Sort by'
+          onClick={() => setIsOpen(true)}
+        >
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
             viewBox='0 0 24 24'
             strokeWidth={1.5}
-            stroke='#000'
+            stroke={getTheme.text}
           >
             <path
               strokeLinecap='round'
@@ -35,7 +42,7 @@ const SortingMenu = () => {
         </div>
       ) : (
         <div className='sorting-menu'>
-          <p>Sort by</p>
+          <p style={{ color: getTheme.text }}>Sort by</p>
           <input
             type='radio'
             name='sort'
@@ -45,7 +52,12 @@ const SortingMenu = () => {
             onChange={handleChange}
             onClick={() => setIsOpen(false)}
           />
-          <label htmlFor='author'>Author</label>
+          <label
+            htmlFor='author'
+            style={{ backgroundColor: getTheme.cardBg, color: getTheme.text }}
+          >
+            Author
+          </label>
           <input
             type='radio'
             name='sort'
@@ -55,7 +67,24 @@ const SortingMenu = () => {
             onChange={handleChange}
             onClick={() => setIsOpen(false)}
           />
-          <label htmlFor='read'>Read</label>
+          <label htmlFor='read' style={{ backgroundColor: getTheme.cardBg, color: getTheme.text }}>
+            Read
+          </label>
+          <input
+            type='radio'
+            name='sort'
+            id='favorite'
+            value='sort_by_favorite'
+            checked={sortBy === 'sort_by_favorite'}
+            onChange={handleChange}
+            onClick={() => setIsOpen(false)}
+          />
+          <label
+            htmlFor='favorite'
+            style={{ backgroundColor: getTheme.cardBg, color: getTheme.text }}
+          >
+            Favorite
+          </label>
           <input
             type='radio'
             name='sort'
@@ -65,7 +94,12 @@ const SortingMenu = () => {
             onChange={handleChange}
             onClick={() => setIsOpen(false)}
           />
-          <label htmlFor='newest'>Newest</label>
+          <label
+            htmlFor='newest'
+            style={{ backgroundColor: getTheme.cardBg, color: getTheme.text }}
+          >
+            Newest
+          </label>
           <input
             type='radio'
             name='sort'
@@ -75,7 +109,12 @@ const SortingMenu = () => {
             onChange={handleChange}
             onClick={() => setIsOpen(false)}
           />
-          <label htmlFor='oldest'>Oldest</label>
+          <label
+            htmlFor='oldest'
+            style={{ backgroundColor: getTheme.cardBg, color: getTheme.text }}
+          >
+            Oldest
+          </label>
         </div>
       )}
     </div>

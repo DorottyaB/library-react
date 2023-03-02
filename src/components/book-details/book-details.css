@@ -4,11 +4,10 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-  padding: 20px 25px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px 0px;
+  padding: 25px;
+  margin-bottom: 16px;
+  border-radius: 6px;
 }
 
 .book-details {
@@ -20,24 +19,23 @@
 }
 
 .title {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .author {
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 15px;
+  font-weight: 400;
 }
 
+.genre,
 .pages {
-  font-size: 13px;
-  font-weight: 300;
+  font-size: 14px;
 }
 
 .button-group {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 @media screen and (min-width: 768px) {
@@ -47,5 +45,10 @@
 
   .button-group {
     margin-left: auto;
+  }
+
+  .button-group button img {
+    width: 36px;
+    height: 36px;
   }
 }

@@ -3,14 +3,19 @@ import { useContext, useState } from 'react';
 import { BookContext } from '../../context/bookContext';
 import { FormContext } from '../../context/formContext';
 import './new-book-form.css';
+import { ThemeContext } from '../../context/themeContext';
 
 const NewBookForm = () => {
+  const { getTheme } = useContext(ThemeContext);
+
   const { setIsShown } = useContext(FormContext);
   const [book, setBook] = useState({
     author: '',
     title: '',
+    genre: '',
     pages: '',
     isRead: false,
+    isFavorite: false,
     id: null,
     date: null,
   });
@@ -42,19 +47,50 @@ const NewBookForm = () => {
 
   return (
     <div className='overlay'>
-      <div className='form-container'>
+      <div className='form-container' style={{ backgroundColor: getTheme.cardBg }}>
         <form onSubmit={handleAddBook} className='add-book-form'>
           <div className='form-group'>
             <label htmlFor='author'>Author:</label>
-            <input type='text' value={book.author} onChange={handleChange} name='author' required />
+            <input
+              type='text'
+              value={book.author}
+              onChange={handleChange}
+              name='author'
+              required
+              style={{ borderBottomColor: getTheme.text, color: getTheme.text }}
+            />
           </div>
           <div className='form-group'>
             <label htmlFor='title'>Title:</label>
-            <input type='text' name='title' value={book.title} onChange={handleChange} required />
+            <input
+              type='text'
+              name='title'
+              value={book.title}
+              onChange={handleChange}
+              required
+              style={{ borderBottomColor: getTheme.text, color: getTheme.text }}
+            />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='genre'>Genre:</label>
+            <input
+              type='text'
+              name='genre'
+              value={book.genre}
+              onChange={handleChange}
+              required
+              style={{ borderBottomColor: getTheme.text, color: getTheme.text }}
+            />
           </div>
           <div className='form-group'>
             <label htmlFor='pages'>Number of pages:</label>
-            <input type='number' name='pages' value={book.pages} onChange={handleChange} />
+            <input
+              type='number'
+              name='pages'
+              value={book.pages}
+              onChange={handleChange}
+              style={{ borderBottomColor: getTheme.text, color: getTheme.text }}
+            />
           </div>
           <div className='form-group is-read'>
             <label>Have you read it?</label>
@@ -65,11 +101,16 @@ const NewBookForm = () => {
               checked={book.isRead}
               value={book.isRead}
               onChange={handleChange}
+              style={{ borderColor: getTheme.text }}
             />
           </div>
           <input type='submit' className='submit-btn' value='ADD BOOK' />
         </form>
-        <button className='cancel-btn' onClick={() => setIsShown(false)}>
+        <button
+          className='cancel-btn'
+          onClick={() => setIsShown(false)}
+          style={{ color: getTheme.text }}
+        >
           Cancel
         </button>
       </div>

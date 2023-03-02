@@ -1,11 +1,13 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
 .book-list {
   padding: 25px;
   padding-top: 20px;
-  min-width: 75%;
-  max-width: 85%;
-}
-
-.book-list ul {
   width: 100%;
 }
 
@@ -14,7 +16,6 @@
   width: 250px;
   text-align: center;
   align-self: center;
-  z-index: -1;
 }
 
 .get-started-text {
@@ -22,12 +23,10 @@
   font-size: 40px;
   font-weight: 300;
   margin-bottom: 1.5rem;
-  color: rgb(62, 62, 62);
 }
 
 .get-started-icon {
+  margin-top: 2.5rem;
   width: 50%;
-  filter: invert(97%) sepia(54%) saturate(1456%) hue-rotate(66deg) brightness(87%) contrast(84%);
-  -webkit-filter: invert(97%) sepia(54%) saturate(1456%) hue-rotate(66deg) brightness(87%)
-    contrast(84%);
+  filter: invert(17%) sepia(58%) saturate(7112%) hue-rotate(246deg) brightness(82%) contrast(89%);
 }

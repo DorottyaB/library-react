@@ -21,6 +21,9 @@ export function bookReducer(books, action) {
     case 'sort_by_read': {
       return [...books].sort((a, b) => Number(a.isRead) - Number(b.isRead));
     }
+    case 'sort_by_favorite': {
+      return [...books].sort((a, b) => Number(b.isFavorite) - Number(a.isFavorite));
+    }
     case 'sort_by_newest': {
       return [...books].sort((a, b) => b.date - a.date);
     }

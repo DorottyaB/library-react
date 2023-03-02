@@ -1,51 +1,50 @@
 button {
   border: none;
-  border-radius: 5px;
-  font-family: 'Rubik', sans-serif;
-  color: #fff;
+  border-radius: 6px;
+  font-family: 'Lato', sans-serif;
+  color: #f3f3f3;
   padding: 6px 12px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button:focus-visible {
-  outline: 1px solid #196037;
+  outline-offset: 2px;
+  outline: 2px solid var(--primary-color);
 }
 
 .btn-primary {
-  background-color: #4acf81;
-}
-
-.btn-light {
-  background-color: #49bd79;
+  background-color: var(--primary-color);
 }
 
 .btn-secondary {
-  border: 2px solid #ff8c66;
   background-color: transparent;
-  color: #ff8c66;
+  padding: 0;
+}
+
+.btn-starter {
+  padding: 12px 18px;
+  margin: 0 auto;
 }
 
 .btn-main {
-  padding: 10px 15px;
-}
-
-.read {
-  background-color: #4acf81;
-}
-
-.not-read {
-  background-color: #eab224;
+  width: 50px;
+  height: 35px;
+  font-size: 24px;
 }
 
 @media screen and (min-width: 1024px) {
   button:hover {
-    filter: brightness(105%);
+    filter: brightness(110%);
   }
 
-  .btn-secondary:hover {
-    background-color: #ff8c66;
-    color: #fff;
+  .btn-main {
+    width: 68px;
+    height: 45px;
+    font-size: 32px;
   }
 }
