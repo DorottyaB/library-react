@@ -9,10 +9,9 @@ const SearchBar = () => {
   const { query, setQuery, books } = useContext(BookContext);
   const { getTheme } = useContext(ThemeContext);
 
-  const genre = books.map(book => book.genre.map(g => g.trim())).flat(1);
+  const genre = books.length > 0 ? books.map(book => book.genre.map(g => g.trim())).flat(1) : [];
   // console.log([...new Set(genre)].map(g => g.trimStart()));
   const genreArray = genre.filter((value, index, array) => array.indexOf(value) === index);
-  console.log(genreArray);
 
   function handleSearch(e) {
     const { value } = e.target;
