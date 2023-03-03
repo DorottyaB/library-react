@@ -1,12 +1,13 @@
-import './App.css';
-import Header from './components/header/Header';
-import BookList from './components/book-list/BookList';
+import { useContext } from 'react';
 import BookContextProvider from './context/bookContext';
 import FormContextProvider from './context/formContext';
+import { ThemeContext } from './context/themeContext';
+import Header from './components/header/Header';
+import BookList from './components/book-list/BookList';
 import ShowForm from './components/show-form/ShowForm';
 import Footer from './components/footer/Footer';
-import { useContext } from 'react';
-import { ThemeContext } from './context/themeContext';
+import SearchBar from './components/search-bar/SearchBar';
+import './App.css';
 
 function App() {
   const { getTheme } = useContext(ThemeContext);
@@ -17,6 +18,7 @@ function App() {
         <div className='App' style={{ backgroundColor: getTheme.bg, color: getTheme.text }}>
           <Header />
           <main>
+            <SearchBar />
             <ShowForm />
             <BookList />
           </main>

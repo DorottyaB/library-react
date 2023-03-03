@@ -39,7 +39,7 @@ const BookDetails = ({ book }) => {
       <div className='book-details'>
         <h3 className='title'>{book.title}</h3>
         <h4 className='author'>by {book.author}</h4>
-        {book.genre && <p className='genre'>{book.genre}</p>}
+        {book.genre && <p className='genre'>{book.genre.toString()}</p>}
         {book.pages && <p className='pages'>{book.pages} pages</p>}
       </div>
       <div className='button-group'>

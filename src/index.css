@@ -16,6 +16,10 @@ a:focus-visible {
   outline-color: var(--primary-color);
 }
 
+input {
+  color: inherit;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;

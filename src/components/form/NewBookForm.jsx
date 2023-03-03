@@ -12,7 +12,7 @@ const NewBookForm = () => {
   const [book, setBook] = useState({
     author: '',
     title: '',
-    genre: '',
+    genre: [],
     pages: '',
     isRead: false,
     isFavorite: false,
@@ -22,7 +22,12 @@ const NewBookForm = () => {
 
   const handleChange = e => {
     const target = e.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value =
+      target.type === 'checkbox'
+        ? target.checked
+        : target.name === 'genre'
+        ? Array.from(target.value.trim().toLowerCase().split(','))
+        : target.value;
     const name = target.name;
     setBook(prevFormData => {
       return {
@@ -76,6 +81,7 @@ const NewBookForm = () => {
             <input
               type='text'
               name='genre'
+              autoComplete='off'
               value={book.genre}
               onChange={handleChange}
               required
@@ -83,7 +89,9 @@ const NewBookForm = () => {
             />
           </div>
           <div className='form-group'>
-            <label htmlFor='pages'>Number of pages:</label>
+            <label htmlFor='pages'>
+              Number of pages <span style={{ fontSize: '13px' }}>(optional)</span>:
+            </label>
             <input
               type='number'
               name='pages'
@@ -104,7 +112,7 @@ const NewBookForm = () => {
               style={{ borderColor: getTheme.text }}
             />
           </div>
-          <input type='submit' className='submit-btn' value='ADD BOOK' />
+          <input type='submit' className='submit-btn' value='+ ADD BOOK' />
         </form>
         <button
           className='cancel-btn'
