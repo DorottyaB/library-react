@@ -10,11 +10,26 @@
   width: 100%;
 }
 
+.btn-load {
+  background-color: var(--primary-color);
+  font-family: inherit;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 12px 20px;
+  transition: all 0.3s;
+}
+
+.btn-load:active {
+  transform: scale(0.98);
+  filter: brightness(90%);
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
+}
+
 .get-started {
   margin-top: 50px;
   width: 250px;
   text-align: center;
   align-self: center;
+  z-index: 0;
 }
 
 .get-started-text {
@@ -27,5 +42,5 @@
 .get-started-icon {
   margin-top: 2.5rem;
   width: 50%;
-  filter: invert(17%) sepia(58%) saturate(7112%) hue-rotate(246deg) brightness(82%) contrast(89%);
+  filter: invert(42%) sepia(12%) saturate(4536%) hue-rotate(134deg) brightness(104%) contrast(101%);
 }

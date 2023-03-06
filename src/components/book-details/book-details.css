@@ -35,7 +35,8 @@
 
 .button-group {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 18px;
 }
 
 @media screen and (min-width: 768px) {
@@ -45,10 +46,6 @@
 
   .button-group {
     margin-left: auto;
-  }
-
-  .button-group button img {
-    width: 36px;
-    height: 36px;
+    gap: 12px;
   }
 }

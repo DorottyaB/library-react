@@ -19,44 +19,52 @@ const SearchBar = () => {
   }
 
   return (
-    <form className='search-form' style={{ backgroundColor: getTheme.cardBg }}>
-      <div className='form-group'>
-        <label htmlFor='searchBooks'>
-          <img src={searchIcon} width='26' height='26' alt='Search' />
-        </label>
-        <input
-          type='search'
-          name='q'
-          id='searchBooks'
-          placeholder='Search by title...'
-          onInput={handleSearch}
-          value={query}
-        />
-      </div>
-      <span style={{ backgroundColor: getTheme.bg }}></span>
-      <div className='form-group custom-select'>
-        <label htmlFor='searchGenre'>
-          <img src={genreIcon} width='26' height='26' alt='Genre' />
-        </label>
-        <select
-          onChange={handleSearch}
-          style={{ backgroundColor: getTheme.cardBg, color: '#7b7b7b' }}
-          defaultValue='0'
+    <>
+      {books.length ? (
+        <form
+          onSubmit={e => e.preventDefault()}
+          className='search-form'
+          style={{ backgroundColor: getTheme.cardBg }}
         >
-          <option value='0' disabled>
-            Filter by genre...
-          </option>
-          <option value='' style={{ color: getTheme.text }}>
-            All
-          </option>
-          {genreArray.map((g, idx) => (
-            <option key={idx} value={g} style={{ color: getTheme.text }}>
-              {g}
-            </option>
-          ))}
-        </select>
-      </div>
-    </form>
+          <div className='form-group'>
+            <label htmlFor='searchBooks'>
+              <img src={searchIcon} width='26' height='26' alt='Search' />
+            </label>
+            <input
+              type='search'
+              name='q'
+              id='searchBooks'
+              placeholder='Search by title...'
+              onInput={handleSearch}
+              value={query}
+            />
+          </div>
+          <span style={{ backgroundColor: getTheme.bg }}></span>
+          <div className='form-group custom-select'>
+            <label htmlFor='searchGenre'>
+              <img src={genreIcon} width='26' height='26' alt='Genre' />
+            </label>
+            <select
+              onChange={handleSearch}
+              style={{ backgroundColor: getTheme.cardBg, color: '#7b7b7b' }}
+              defaultValue='0'
+            >
+              <option value='0' disabled>
+                Filter by genre...
+              </option>
+              <option value='' style={{ color: getTheme.text }}>
+                All
+              </option>
+              {genreArray.map((g, idx) => (
+                <option key={idx} value={g} style={{ color: getTheme.text }}>
+                  {g}
+                </option>
+              ))}
+            </select>
+          </div>
+        </form>
+      ) : null}
+    </>
   );
 };
 

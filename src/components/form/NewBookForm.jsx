@@ -112,7 +112,9 @@ const NewBookForm = () => {
               style={{ borderColor: getTheme.text }}
             />
           </div>
-          <input type='submit' className='submit-btn' value='+ ADD BOOK' />
+          <button type='submit' className='submit-btn'>
+            + ADD BOOK
+          </button>
         </form>
         <button
           className='cancel-btn'

@@ -1,15 +1,18 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 export const ThemeContext = createContext();
 
 const ThemeContextProvider = ({ children }) => {
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  // const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const prefersLight = localStorage.getItem('prefersLight')
+    ? JSON.parse(localStorage.getItem('prefersLight'))
+    : false;
 
   const [theme, setTheme] = useState({
-    isLightTheme: !prefersDark,
+    isLightTheme: prefersLight,
     light: {
-      bg: '#EEEEEE',
-      cardBg: '#F9F9F9',
+      bg: '#D6E5E3',
+      cardBg: '#ebf5f3',
       text: '#070707',
     },
     dark: {
@@ -23,10 +26,14 @@ const ThemeContextProvider = ({ children }) => {
     setTheme({ ...theme, isLightTheme: !theme.isLightTheme });
   }
 
+  useEffect(() => {
+    localStorage.setItem('prefersLight', JSON.stringify(theme.isLightTheme));
+  }, [theme]);
+
   const getTheme = theme.isLightTheme ? theme.light : theme.dark;
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, getTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, getTheme }}>
       {children}
     </ThemeContext.Provider>
   );

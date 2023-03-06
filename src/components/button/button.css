@@ -24,27 +24,57 @@ button:focus-visible {
 .btn-secondary {
   background-color: transparent;
   padding: 0;
+  transition: all 0.5s;
+}
+
+.btn-secondary:not(.btn-small):active {
+  transform: scale(1.5);
 }
 
 .btn-starter {
   padding: 12px 18px;
   margin: 0 auto;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .btn-main {
   width: 50px;
   height: 35px;
   font-size: 24px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-main:active {
+  transform: scale(0.98);
+}
+
+.btn-small img {
+  width: 30px;
+  height: 30px;
 }
 
 @media screen and (min-width: 1024px) {
   button:hover {
-    filter: brightness(110%);
+    filter: brightness(115%);
+  }
+
+  button.btn-small:hover {
+    filter: brightness(60%);
   }
 
   .btn-main {
     width: 68px;
     height: 45px;
     font-size: 32px;
+  }
+
+  .btn-secondary:not(.btn-small) img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .btn-small img {
+    width: 26px;
+    height: 26px;
   }
 }

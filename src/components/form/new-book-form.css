@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: flex-start;
   overflow: hidden;
+  z-index: 10;
 }
 
 .form-container {
@@ -134,7 +135,8 @@ input[type='checkbox'].is-read-checkbox:checked::before {
   transform: rotate(45deg) translateY(-10%) translateX(-25%);
 }
 
-input.submit-btn {
+button.submit-btn {
+  display: inline-block;
   align-self: stretch;
   padding: 14px 0;
   margin-top: 10px;
@@ -146,15 +148,17 @@ input.submit-btn {
   font-size: 12px;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px;
+  transition: all 0.3s;
 }
 
-input.submit-btn:focus-visible {
+button.submit-btn:focus-visible {
   outline-offset: 2px;
   outline: 2px solid var(--primary-color);
 }
 
-.submit-btn:hover {
+button.submit-btn:hover,
+button.submit-btn:active {
   filter: brightness(110%);
 }
 

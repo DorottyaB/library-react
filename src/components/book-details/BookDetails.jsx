@@ -6,7 +6,7 @@ import checked from '../../assets/check-circle-fill.svg';
 import unchecked from '../../assets/check-circle.svg';
 import notFavorite from '../../assets/heart.svg';
 import favorite from '../../assets/heart-fill.svg';
-import remove from '../../assets/x-circle.svg';
+import remove from '../../assets/x-light.svg';
 import './book-details.css';
 
 const BookDetails = ({ book }) => {
@@ -53,6 +53,7 @@ const BookDetails = ({ book }) => {
               <img src={unchecked} width='30' height='30' alt='Not read' />
             )
           }
+          size='normal'
           title='Toggle read'
         />
         <Button
@@ -65,11 +66,13 @@ const BookDetails = ({ book }) => {
               <img src={notFavorite} width='30' height='30' alt='Not favorite' />
             )
           }
-          title='Add to favorites'
+          size='normal'
+          title='Mark as favorite'
         />
         <Button
           color=''
-          value={<img src={remove} width='30' height='30' alt='Remove' />}
+          value={<img src={remove} width='26' height='26' alt='Remove' />}
+          size='small'
           handleClick={() => handleDeleteBook(book.id)}
           title='Remove'
         />
