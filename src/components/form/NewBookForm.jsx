@@ -101,7 +101,7 @@ const NewBookForm = () => {
             />
           </div>
           <div className='form-group is-read'>
-            <label>Have you read it?</label>
+            <label htmlFor='isRead'>Have you read it?</label>
             <input
               className='is-read-checkbox'
               name='isRead'

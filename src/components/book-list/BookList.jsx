@@ -40,7 +40,7 @@ const BookList = () => {
   ) : !books.length ? (
     <div className='get-started'>
       <Button value='ADD NEW BOOK' color='primary' handleClick={() => setIsShown(true)} />
-      <img src={image} alt='Stack of books' className='get-started-icon' />
+      <img src={image} alt='Stack of books' className='get-started-icon' width='125' height='125' />
     </div>
   ) : (
     <div className='get-started'>

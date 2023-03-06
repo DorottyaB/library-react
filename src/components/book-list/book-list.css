@@ -41,6 +41,5 @@
 
 .get-started-icon {
   margin-top: 2.5rem;
-  width: 50%;
   filter: invert(42%) sepia(12%) saturate(4536%) hue-rotate(134deg) brightness(104%) contrast(101%);
 }

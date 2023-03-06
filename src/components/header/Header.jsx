@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header>
       <div className='logo-container'>
-        <img src={logo} alt='logo' />
+        <img src={logo} alt='logo' width='30' height='30' />
         <h1>library</h1>
       </div>
       <div className='switch-container'>
@@ -31,7 +31,7 @@ const Header = () => {
           <path d='M240,120H220a8,8,0,0,0,0,16h20a8,8,0,0,0,0-16Z'></path>
           <path d='M193.1,70.9a7.8,7.8,0,0,0,5.6-2.3l14.2-14.1a8.1,8.1,0,0,0-11.4-11.4L187.4,57.3a8,8,0,0,0,0,11.3A7.8,7.8,0,0,0,193.1,70.9Z'></path>
         </svg>
-        <label className='switch'>
+        <label className='switch' aria-label='Toggle theme'>
           <input type='checkbox' onChange={toggleTheme} checked={!theme.isLightTheme} />
           <span className='slider round'></span>
         </label>
