@@ -63,6 +63,7 @@ const NewBookForm = () => {
               name='author'
               required
               style={{ borderBottomColor: getTheme.text, color: getTheme.text }}
+              autoFocus
             />
           </div>
           <div className='form-group'>
