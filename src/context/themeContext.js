@@ -11,8 +11,8 @@ const ThemeContextProvider = ({ children }) => {
   const [theme, setTheme] = useState({
     isLightTheme: prefersLight,
     light: {
-      bg: '#D6E5E3',
-      cardBg: '#ebf5f3',
+      bg: '#d9e1e0',
+      cardBg: '#ebeeee',
       text: '#070707',
     },
     dark: {
