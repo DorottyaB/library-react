@@ -1,6 +1,13 @@
 # Book collection manager made with React
 
-A book collection manager where you can add and remove books, and mark them as read or not read. The books are stored in localStorage.
+### Users can:
+
+- Add and remove books.
+- Mark books as read and add to favorites.
+- Sort the books by newest, oldest, favorite, read and author.
+- Search books and filter them by genre.
+- Switch between light and dark theme.
+- See the collection after browser refresh.
 
 ### Technologies used
 
